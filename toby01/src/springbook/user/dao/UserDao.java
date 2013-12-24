@@ -10,7 +10,7 @@ import springbook.user.domain.User;
 
 public class UserDao {
 	public void add(User user) throws ClassNotFoundException, SQLException {
-		Class.forName("com.oracle.jdbc.Driver");
+		Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection c = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:orcl", "toby",
 				"ojhk7615");
 
@@ -28,7 +28,7 @@ public class UserDao {
 
 
 	public User get(String id) throws ClassNotFoundException, SQLException {
-		Class.forName("com.oracle.jdbc.Driver");
+		Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection c = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:orcl", "toby",
 				"ojhk7615");
 		PreparedStatement ps = c
